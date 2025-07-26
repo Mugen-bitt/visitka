@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Визитка</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Manrope', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #2e2e2e, #121212);
+      color: #f5f5f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    body::before {
+      top: -100px;
+      left: -100px;
+    }
+
+    body::after {
+      bottom: -100px;
+      right: -80px;
+    }
+
+    .noise {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+      opacity: 0.04;
+      z-index: 0;
+      animation: noiseShift 15s infinite linear;
+    }
+
+    @keyframes noiseShift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50%, 50%); }
+    }
+
+    .container {
+      background: rgba(30, 30, 30, 0.92);
+      border-radius: 16px;
+      padding: 32px 24px;
+      width: 92vw;
+      max-width: 420px;
+      min-height: 460px;
+      box-shadow: 0 0 40px rgba(255, 255, 240, 0.08);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #f5f5dc;
+      margin: 0 0 24px;
+      text-shadow: 0 0 4px rgba(255, 255, 240, 0.3);
+    }
+
+    #text {
+      font-size: 16px;
+      color: #f2f2e9;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 90%;
+    }
+
+    #text p {
+      margin: 0 0 14px;
+    }
+
+    .button {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+      background-color: #f5f5dc;
+      color: #1a1a1a;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 12px rgba(255, 255, 240, 0.2);
+    }
+
+    .button:hover {
+      background-color: #e6e6cc;
+      color: #000;
+      box-shadow: 0 0 18px rgba(255, 255, 240, 0.4);
+    }
+
+    .lang-buttons {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .lang-buttons button {
+      background: none;
+      border: none;
+      font-size: 22px;
+      margin: 0 8px;
+      cursor: pointer;
+      filter: drop-shadow(0 0 2px #f5f5dc);
+    }
+
+    @media (max-height: 600px) {
+      .container {
+        transform: scale(0.95);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="container">
+    <h1 id="title">Привет!</h1>
+    <div id="text">
+      <p>Я инженер, автоматизатор и надёжный партнёр.</p>
+      <p>3+ года в QA. Тестирую мобильные приложения, веб-сайты и людей. Пока ты это читаешь — я уже тестирую тебя 😉</p>
+      <p>Сильная аналитика, фокус на результат и скорость.</p>
+      <p>Говорю на языке бизнеса, отвечаю за качество.</p>
+    </div>
+    <a id="ctaButton" class="button" href="https://t.me/mugen_s" target="_blank">Написать мне</a>
+    <div class="lang-buttons">
+      <button onclick="setLanguage('ru')">🇷🇺</button>
+      <button onclick="setLanguage('en')">🇬🇧</button>
+      <button onclick="setLanguage('jp')">🇯🇵</button>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      ru: {
+        title: "Привет!",
+        text: `
+          <p>Я инженер, автоматизатор и надёжный партнёр.</p>
+          <p>3+ года в QA. Тестирую мобильные приложения, веб-сайты и людей. Пока ты это читаешь — я уже тестирую тебя 😉</p>
+          <p>Сильная аналитика, фокус на результат и скорость.</p>
+          <p>Говорю на языке бизнеса, отвечаю за качество.</p>`,
+        button: "Написать мне"
+      },
+      en: {
+        title: "Hi!",
+        text: `
+          <p>Engineer, automator, and reliable partner.</p>
+          <p>3+ years in QA. I test apps, websites, and people. While you're reading this — I’m already testing you 😉</p>
+          <p>Strong analytics, speed, and results focus.</p>
+          <p>I speak business and take full ownership for quality.</p>`,
+        button: "Message me"
+      },
+      jp: {
+        title: "こんにちは！",
+        text: `
+          <p>エンジニア、自動化の達人、信頼できるパートナー。</p>
+          <p>QA歴3年以上。アプリ、サイト、人もテストします。今これを読んでる間に、君もテスト中😉</p>
+          <p>分析力、スピード、結果重視。</p>
+          <p>ビジネスの言葉で話し、品質に責任を持ちます。</p>`,
+        button: "メッセージする"
+      }
+    };
+
+    function setLanguage(lang) {
+      const selected = content[lang] || content['ru'];
+      document.getElementById('title').innerHTML = selected.title;
+      document.getElementById('text').innerHTML = selected.text;
+      document.getElementById('ctaButton').innerHTML = selected.button;
+    }
+
+    setLanguage('ru');
+  </script>
+</body>
+</html>
