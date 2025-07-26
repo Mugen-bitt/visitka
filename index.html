@@ -3,129 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Секретная встреча</title>
+  <title>Визитка</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Raleway', sans-serif;
-      background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
-      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      background: radial-gradient(circle at center, #0a0a0a, #000000);
+      color: #fefdf9;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-shadow: 0 0 8px rgba(255, 255, 240, 0.08);
     }
 
     .container {
-      background-color: rgba(0, 0, 0, 0.85);
-      border-radius: 20px;
-      padding: 30px 20px;
+      background-color: rgba(20, 20, 20, 0.95);
+      border-radius: 24px;
+      padding: 40px 30px;
+      max-width: 420px;
       width: 90vw;
-      max-width: 400px;
-      min-height: 480px;
+      box-shadow: 0 0 40px rgba(255, 255, 240, 0.05), 0 0 120px rgba(255, 255, 210, 0.1);
       text-align: center;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 2px solid #ff8c00;
-      box-shadow: 0 0 30px #ff8c00a0;
-      animation: glow 3s ease-in-out infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 20px #ff8c00, 0 0 40px #ff4500; }
-      50%      { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00; }
+      border: 1px solid #333;
     }
 
     h1 {
-      font-size: 24px;
-      color: #ff8c00;
-      margin: 0 0 20px;
-      text-shadow: 0 0 10px #ff8c00cc;
+      font-size: 28px;
+      margin-bottom: 24px;
+      color: #fffdf2;
     }
 
     #text {
-      font-size: 16px;
-      margin: 0 0 30px;
-      line-height: 1.6;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: #fdfcf7;
     }
 
-    .button {
-      display: inline-block;
-      padding: 12px 22px;
-      background-color: #ffb347;
-      color: #000;
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 12px #ffcc88;
+      }
+      50% {
+        opacity: 0.6;
+        text-shadow: 0 0 4px #ffcc88;
+      }
+    }
+
+    #divider {
       font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 14px;
-      box-shadow: 0 0 10px #ff8c00;
-      transition: all 0.3s ease-in-out;
+      color: #ffefbb;
+      font-size: 17px;
+      margin-bottom: 22px;
+      animation: blink 1.8s infinite ease-in-out;
     }
 
-    .button:hover {
-      background-color: #ff8c00;
-      color: #fff;
-      box-shadow: 0 0 15px #ff4500;
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0 10px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .icon-link {
+      font-size: 28px;
+      color: #ffdfaa;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 6px #ffcc88);
+    }
+
+    .icon-link:hover {
+      transform: scale(1.2);
+      color: #fff8e1;
     }
 
     .lang-buttons {
-      margin-top: 25px;
+      margin-top: 20px;
     }
 
     .lang-buttons button {
       background: none;
       border: none;
-      font-size: 22px;
-      margin: 0 8px;
+      font-size: 24px;
+      margin: 0 10px;
       cursor: pointer;
-      filter: drop-shadow(0 0 3px #ff8c00);
+      filter: drop-shadow(0 0 3px #ffcc88);
+      transition: transform 0.2s;
     }
 
-    .social-icons {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .social-icons a {
-      color: #ff8c00;
-      font-size: 20px;
-      transition: transform 0.3s ease, color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #fff;
+    .lang-buttons button:hover {
       transform: scale(1.2);
+    }
+
+    @media (max-height: 600px) {
+      .container {
+        transform: scale(0.95);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div>
-      <h1 id="title">Привет!</h1>
-      <p id="text">
-        Инженер. Автоматизатор. Надёжный партнёр.<br>
-        3+ года в QA. Сильная аналитика, самостоятельность и фокус на результат.<br>
-        Увлечён качеством, работаю быстро, говорю на языке бизнеса, беру ответственность за качество.
-      </p>
-      <a id="ctaButton" class="button" href="https://t.me/mugen_s" target="_blank">Написать мне</a>
-    </div>
+    <h1 id="title">Привет!👋🏻</h1>
+    <p id="text">
+      Я инженер, автоматизатор и надёжный партнёр.<br>
+      3+ года в QA. Тестирую мобильные приложения, веб-сайты и людей. Пока ты это читаешь — я уже тестирую тебя 😉<br>
+      Сильная аналитика, фокус на результат и скорость.<br>
+      Говорю на языке бизнеса, отвечаю за качество.
+    </p>
 
-    <div class="social-icons">
-      <a href="https://github.com/Mugen-bitt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/mugen_s" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.linkedin.com/in/pavel-evstigneev" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://line.me/R/ti/p/@yourlineid" target="_blank" title="LINE"><i class="fab fa-line"></i></a>
-      <a href="mailto:pavelupp@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <div id="divider">👇Связь со мной👇</div>
+
+    <div class="icons">
+      <a class="icon-link" href="https://github.com/Mugen-bitt" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a class="icon-link" href="https://t.me/mugen_s" target="_blank" title="Telegram">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a class="icon-link" href="https://www.linkedin.com/in/pavel-evstigneev/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a class="icon-link" href="https://line.me/ti/p/4z2tLgut3y" target="_blank" title="LINE">
+        <i class="fab fa-line"></i>
+      </a>
+      <a class="icon-link" href="mailto:pavelupp@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
 
     <div class="lang-buttons">
@@ -138,19 +155,28 @@
   <script>
     const content = {
       ru: {
-        title: "Привет!",
-        text: "Инженер. Автоматизатор. Надёжный партнёр.<br>3+ года в QA. Сильная аналитика, самостоятельность и фокус на результат.<br>Увлечён качеством, работаю быстро, говорю на языке бизнеса, беру ответственность за качество.",
-        button: "Написать мне"
+        title: "Привет!👋🏻",
+        text: `Я инженер, автоматизатор и надёжный партнёр.<br>
+        3+ года в QA. Тестирую мобильные приложения, веб-сайты и людей. Пока ты это читаешь — я уже тестирую тебя 😉<br>
+        Сильная аналитика, фокус на результат и скорость.<br>
+        Говорю на языке бизнеса, отвечаю за качество.`,
+        divider: "👇Связь со мной👇"
       },
       en: {
-        title: "Hey!",
-        text: "Engineer. Automator. Reliable partner.<br>3+ years in QA. Strong analytical skills, independence, result-driven.<br>Quality-focused, fast-paced, business-minded, takes full responsibility.",
-        button: "Message me"
+        title: "Hi!👋🏻",
+        text: `I'm an engineer, automation expert, and your reliable partner.<br>
+        3+ years in QA. I test mobile apps, websites, and people. While you're reading this — I'm testing you 😉<br>
+        Strong analytical thinking, results-driven and fast.<br>
+        I speak the language of business and own the quality.`,
+        divider: "👇Get in touch👇"
       },
       jp: {
-        title: "こんにちは！",
-        text: "エンジニア・自動化の達人・信頼できるパートナー<br>QA歴3年以上。分析力、主体性、成果重視。<br>品質に情熱、スピード感、ビジネス視点、責任感。",
-        button: "連絡する"
+        title: "こんにちは！👋🏻",
+        text: `私はエンジニアで、自動化の達人、そして信頼できるパートナーです。<br>
+        QA歴3年以上。モバイルアプリ、ウェブサイト、そして人間もテストします。今これを読んでいる間にも、あなたをテスト中😉<br>
+        分析力が強く、スピードと結果にフォーカス。<br>
+        ビジネスの言語を話し、品質に責任を持ちます。`,
+        divider: "👇連絡方法はこちら👇"
       }
     };
 
@@ -158,7 +184,7 @@
       const selected = content[lang] || content['ru'];
       document.getElementById('title').innerHTML = selected.title;
       document.getElementById('text').innerHTML = selected.text;
-      document.getElementById('ctaButton').innerHTML = selected.button;
+      document.getElementById('divider').innerHTML = selected.divider;
     }
 
     setLanguage('ru');
