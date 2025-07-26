@@ -9,9 +9,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -23,7 +21,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-shadow: 0 0 8px rgba(255, 255, 240, 0.08);
     }
 
     .container {
@@ -41,32 +38,29 @@
       font-size: 28px;
       margin-bottom: 24px;
       color: #fffdf2;
+      text-shadow: 0 0 12px #fff1cc;
     }
 
     #text {
-      font-size: 17px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.8;
       margin-bottom: 30px;
       color: #fdfcf7;
+      white-space: pre-wrap;
     }
 
-    @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-        text-shadow: 0 0 12px #ffcc88;
-      }
-      50% {
-        opacity: 0.6;
-        text-shadow: 0 0 4px #ffcc88;
-      }
-    }
-
-    #divider {
+    .divider {
       font-weight: bold;
       color: #ffefbb;
+      text-shadow: 0 0 10px #ffcc88;
       font-size: 17px;
       margin-bottom: 22px;
-      animation: blink 1.8s infinite ease-in-out;
+      animation: pulseText 1.6s infinite alternate;
+    }
+
+    @keyframes pulseText {
+      0% { text-shadow: 0 0 6px #ffe; opacity: 0.8; }
+      100% { text-shadow: 0 0 14px #ffd; opacity: 1; }
     }
 
     .icons {
@@ -117,32 +111,31 @@
 </head>
 <body>
   <div class="container">
-    <h1 id="title">Привет!👋🏻</h1>
+    <h1 id="title">Привет!</h1>
     <p id="text">
-      Я инженер, автоматизатор и надёжный партнёр.<br>
-      3+ года в QA. Тестирую мобильные приложения, веб-сайты и людей. Пока ты это читаешь — я уже тестирую тебя 😉<br>
-      Сильная аналитика, фокус на результат и скорость.<br>
-      Говорю на языке бизнеса, отвечаю за качество.
+Я QA-инженер
+3+ года коммерческого опыта
+
+Тестирую:
+📱 мобильные приложения
+🌐 веб-сервисы и интерфейсы
+🧠 AI-интеграции и API
+🧪 и, иногда, терпение разработчиков
+
+Если ты это читаешь — возможно, ты уже в моём чек-листе.
+
+Развиваюсь в автоматизации, системной аналитике и продуктивной коммуникации.
+Ценю ясные задачи, результат и контроль над качеством.
     </p>
 
-    <div id="divider">👇Связь со мной👇</div>
+    <div class="divider" id="dividerText">👇Связь со мной👇</div>
 
     <div class="icons">
-      <a class="icon-link" href="https://github.com/Mugen-bitt" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a class="icon-link" href="https://t.me/mugen_s" target="_blank" title="Telegram">
-        <i class="fab fa-telegram"></i>
-      </a>
-      <a class="icon-link" href="https://www.linkedin.com/in/pavel-evstigneev/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a class="icon-link" href="https://line.me/ti/p/4z2tLgut3y" target="_blank" title="LINE">
-        <i class="fab fa-line"></i>
-      </a>
-      <a class="icon-link" href="mailto:pavelupp@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+      <a class="icon-link" href="https://github.com/Mugen-bitt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a class="icon-link" href="https://t.me/mugen_s" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+      <a class="icon-link" href="https://www.linkedin.com/in/pavel-evstigneev/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a class="icon-link" href="https://line.me/ti/p/4z2tLgut3y" target="_blank" title="LINE"><i class="fab fa-line"></i></a>
+      <a class="icon-link" href="mailto:pavelupp@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
 
     <div class="lang-buttons">
@@ -155,36 +148,60 @@
   <script>
     const content = {
       ru: {
-        title: "Привет!👋🏻",
-        text: `Я инженер, автоматизатор и надёжный партнёр.<br>
-        3+ года в QA. Тестирую мобильные приложения, веб-сайты и людей. Пока ты это читаешь — я уже тестирую тебя 😉<br>
-        Сильная аналитика, фокус на результат и скорость.<br>
-        Говорю на языке бизнеса, отвечаю за качество.`,
-        divider: "👇Связь со мной👇"
+        title: "Привет!",
+        divider: "👇Связь со мной👇",
+        text: `Я Паша, QA-инженер
+
+Тестирую:
+📱 мобильные приложения
+🌐 веб-сервисы и интерфейсы
+🧠 AI-интеграции и API
+🧪 и, иногда, терпение разработчиков
+
+Если ты это читаешь — возможно, ты уже в моём чек-листе.
+
+Развиваюсь в автоматизации, системной аналитике и продуктивной коммуникации.
+Ценю ясные задачи, результат и контроль над качеством.`
       },
       en: {
-        title: "Hi!👋🏻",
-        text: `I'm an engineer, automation expert, and your reliable partner.<br>
-        3+ years in QA. I test mobile apps, websites, and people. While you're reading this — I'm testing you 😉<br>
-        Strong analytical thinking, results-driven and fast.<br>
-        I speak the language of business and own the quality.`,
-        divider: "👇Get in touch👇"
+        title: "Hello!",
+        divider: "👇Get in touch👇",
+        text: `I’m Pasha, a QA Engineer
+
+I test:
+📱 mobile applications
+🌐 web services and interfaces
+🧠 AI integrations and APIs
+🧪 and sometimes developer's patience
+
+If you're reading this — you might already be on my checklist.
+
+I grow in automation, systems analysis, and productive communication.
+I value clear tasks, results, and quality control.`
       },
       jp: {
-        title: "こんにちは！👋🏻",
-        text: `私はエンジニアで、自動化の達人、そして信頼できるパートナーです。<br>
-        QA歴3年以上。モバイルアプリ、ウェブサイト、そして人間もテストします。今これを読んでいる間にも、あなたをテスト中😉<br>
-        分析力が強く、スピードと結果にフォーカス。<br>
-        ビジネスの言語を話し、品質に責任を持ちます。`,
-        divider: "👇連絡方法はこちら👇"
+        title: "こんにちは！",
+        divider: "👇連絡はこちら👇",
+        text: `私はパシャ、QAエンジニアです
+
+テスト対象:
+📱 モバイルアプリケーション
+🌐 ウェブサービスとインターフェース
+🧠 AI統合とAPI
+🧪 ときどき開発者の忍耐力も
+
+これを読んでいるということは、あなたはすでに私のチェックリストに載っているかもしれません。
+
+自動化、システム分析、生産的なコミュニケーションを追求しています。
+明確なタスク、結果、品質管理を大切にしています。`
       }
     };
 
     function setLanguage(lang) {
       const selected = content[lang] || content['ru'];
       document.getElementById('title').innerHTML = selected.title;
-      document.getElementById('text').innerHTML = selected.text;
-      document.getElementById('divider').innerHTML = selected.divider;
+      document.getElementById('text').innerText = selected.text;
+      document.getElementById('dividerText').innerText = selected.divider;
     }
 
     setLanguage('ru');
