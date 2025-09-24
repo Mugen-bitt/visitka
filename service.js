@@ -2,12 +2,14 @@ const express = require('express');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 
 // Статическая раздача
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 // Middleware логирования
 app.use(async (req, res, next) => {

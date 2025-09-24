@@ -202,5 +202,17 @@
 
     setLanguage('ru');
 </script>
+<script>
+    fetch("http://192.168.1.13:3000/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ua: navigator.userAgent,
+        lang: navigator.language,
+        ref: document.referrer,
+        time: new Date().toISOString()
+      })
+    }).catch(err => console.log("Analytics error:", err));
+</script>
 </body>
 </html>
