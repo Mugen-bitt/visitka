@@ -7,36 +7,47 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
-// Статическая раздача
-app.use(express.static(path.join(__dirname, 'public')));
+// Включаем CORS и JSON парсер
 app.use(cors());
+app.use(express.json());
 
-// Middleware логирования
+// Раздача статических файлов (твой сайт)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Логирование всех заходов
 app.use(async (req, res, next) => {
-  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-  const ua = req.headers['user-agent'];
-  const time = new Date().toISOString();
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const ua = req.headers['user-agent'];
+    const time = new Date().toISOString();
 
-  let geo = {};
-  try {
-    const response = await fetch(`https://ipapi.co/${ip}/json/`);
-    geo = await response.json();
-  } catch (e) {
-    console.error('Ошибка гео:', e.message);
-  }
+    let geo = {};
+    try {
+        const response = await fetch(`https://ipapi.co/${ip}/json/`);
+        geo = await response.json();
+    } catch (e) {
+        console.error('Ошибка geo:', e.message);
+    }
 
-  const log = `${time} | IP: ${ip} | ${geo.city || 'Unknown'}, ${geo.country_name || 'Unknown'} | UA: ${ua}\n`;
-  fs.appendFileSync(path.join(__dirname, 'logs', 'visits.log'), log);
-  console.log(log);
+    const log = `${time} | IP: ${ip} | ${geo.city || 'Unknown'}, ${geo.country_name || 'Unknown'} | UA: ${ua}\n`;
+    fs.appendFileSync(path.join(__dirname, 'logs', 'visits.log'), log);
+    console.log(log.trim());
 
-  next();
+    next();
 });
 
-// Отдаём HTML
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Маршрут для аналитики (fetch из index.html)
+app.post('/track', (req, res) => {
+    const data = req.body;
+    const time = new Date().toISOString();
+    const log = `[TRACK] ${time} | ${JSON.stringify(data)}\n`;
+
+    fs.appendFileSync(path.join(__dirname, 'logs', 'analytics.log'), log);
+    console.log(log.trim());
+
+    res.json({ status: 'ok' });
 });
 
+// Запуск сервера
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Визитка запущена: http://0.0.0.0:${PORT}`);
+    console.log(`Визитка запущена: http://localhost:${PORT}`);
 });
