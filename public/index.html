@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Визитка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+        * { box-sizing: border-box; }
+
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Manrope', sans-serif;
+          background: radial-gradient(circle at center, #0a0a0a, #000000);
+          color: #fefdf9;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .container {
+          background-color: rgba(20, 20, 20, 0.95);
+          border-radius: 24px;
+          padding: 40px 30px;
+          max-width: 420px;
+          width: 90vw;
+          box-shadow: 0 0 40px rgba(255, 255, 240, 0.05), 0 0 120px rgba(255, 255, 210, 0.1);
+          text-align: center;
+          border: 1px solid #333;
+        }
+
+        h1 {
+          font-size: 28px;
+          margin-bottom: 20px;
+          color: #fffdf2;
+          text-shadow: 0 0 12px #fff1cc;
+        }
+
+        #text {
+          font-size: 16px;
+          line-height: 1.8;
+          margin-bottom: 10px;
+          color: #fdfcf7;
+          white-space: pre-wrap;
+        }
+
+        /* Блок "Тестирую" */
+        .skills {
+          margin: 30px 0;
+          text-align: left;
+        }
+
+        .skills h2 {
+          font-size: 20px;
+          margin-bottom: 15px;
+          text-align: center;
+          color: #fffdf2;
+          text-shadow: 0 0 8px #ffe8a3;
+        }
+
+        .skills ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          font-size: 17px;
+          line-height: 2.2;
+        }
+
+        .skills li {
+          display: flex;
+          align-items: center;
+          margin: 8px 0;
+          color: #fdfcf7;
+          text-shadow: 0 0 6px rgba(255, 255, 210, 0.4);
+        }
+
+        .skills .icon {
+          display: inline-block;
+          width: 32px;
+          text-align: center;
+          margin-right: 8px;
+        }
+
+        .divider {
+          font-weight: bold;
+          color: #ffefbb;
+          text-shadow: 0 0 10px #ffcc88;
+          font-size: 17px;
+          margin: 25px 0;
+          animation: pulseText 1.6s infinite alternate;
+        }
+
+        @keyframes pulseText {
+          0% { text-shadow: 0 0 6px #ffe; opacity: 0.8; }
+          100% { text-shadow: 0 0 14px #ffd; opacity: 1; }
+        }
+
+        .icons {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px 0 10px;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .icon-link {
+          font-size: 28px;
+          color: #ffdfaa;
+          text-decoration: none;
+          transition: transform 0.3s ease;
+          filter: drop-shadow(0 0 6px #ffcc88);
+        }
+
+        .icon-link:hover {
+          transform: scale(1.2);
+          color: #fff8e1;
+        }
+
+        .lang-buttons {
+          margin-top: 20px;
+        }
+
+        .lang-buttons button {
+          background: none;
+          border: none;
+          font-size: 24px;
+          margin: 0 10px;
+          cursor: pointer;
+          filter: drop-shadow(0 0 3px #ffcc88);
+          transition: transform 0.2s;
+        }
+
+        .lang-buttons button:hover {
+          transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 id="title">Привет!</h1>
+    <p id="text">
+        Я Паша, QA-инженер
+    </p>
+
+    <div class="skills">
+        <h2>Тестирую:</h2>
+        <ul>
+            <li><span class="icon">📱</span> Мобильные приложения</li>
+            <li><span class="icon">🌐</span> Веб-сервисы и интерфейсы</li>
+            <li><span class="icon">🧠</span> AI-интеграции и API</li>
+            <li><span class="icon">🧪</span> И, иногда, терпение разработчиков</li>
+        </ul>
+    </div>
+
+    <div class="divider" id="dividerText">👇Связь со мной👇</div>
+
+    <div class="icons">
+        <!-- GitHub убран -->
+        <a class="icon-link" href="https://t.me/mugen_s" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a class="icon-link" href="https://www.linkedin.com/in/pavel-evstigneev/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <!-- LINE убран -->
+        <a class="icon-link" href="mailto:pavelupp@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="lang-buttons">
+        <button onclick="setLanguage('ru')">🇷🇺</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
+        <button onclick="setLanguage('jp')">🇯🇵</button>
+    </div>
+</div>
+
+<script>
+    const content = {
+      ru: {
+        title: "Привет!",
+        divider: "👇Связь со мной👇",
+        text: `Я Паша, QA-инженер`
+      },
+      en: {
+        title: "Hello!",
+        divider: "👇Get in touch👇",
+        text: `I’m Pasha, a QA Engineer`
+      },
+      jp: {
+        title: "こんにちは！",
+        divider: "👇連絡はこちら👇",
+        text: `私はパシャ、QAエンジニアです`
+      }
+    };
+
+    function setLanguage(lang) {
+      const selected = content[lang] || content['ru'];
+      document.getElementById('title').innerHTML = selected.title;
+      document.getElementById('text').innerText = selected.text;
+      document.getElementById('dividerText').innerText = selected.divider;
+    }
+
+    setLanguage('ru');
+</script>
+</body>
+</html>
