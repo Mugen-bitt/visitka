@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Контейнер */
+.container {
+  max-width: 700px;
+  padding: 25px 35px;
+  background-color: rgba(20, 20, 20, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 240, 0.15);
+  animation: fade-in-container 1s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes fade-in-container {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Неоновая надпись */
+.neon-title {
+  font-size: 2.2rem;
+  color: #ffeb99;
+  text-shadow:
+    0 0 5px #ffeb99,
+    0 0 15px #ffeb99,
+    0 0 30px #ffeb99;
+  opacity: 0;
+  margin-bottom: 40px;
+  animation: neon-fade 3s ease-out forwards;
+}
+
+@keyframes neon-fade {
+  0% { opacity: 0; text-shadow: none; }
+  25% { opacity: 0.5; text-shadow: 0 0 5px #ffeb99; }
+  60% { opacity: 1; text-shadow: 0 0 15px #ffeb99, 0 0 30px #ffeb99; }
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #fff8dc,
+      0 0 30px #ffeb99,
+      0 0 60px #ffeb99;
+  }
+}
+
+/* Основной текст */
+.intro {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #ddd;
+  text-align: justify;
+  margin: 0 auto 35px auto;
+  max-width: 550px;
+}
+
+/* Разделитель */
+.divider {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffeb99;
+  margin: 30px 0 20px;
+  text-shadow: 0 0 8px #ffeb99, 0 0 20px #ffeb99;
+}
+
+/* Иконки */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.icon {
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #ffeb99;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 235, 153, 0.08);
+  box-shadow: 0 0 12px rgba(255, 235, 153, 0.4);
+}
+
+.icon:hover {
+  background: #ffeb99;
+  color: #000;
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #ffeb99, 0 0 50px #ffeb99;
+}
+
+/* Fade-in анимации */
+.fade-in {
+  opacity: 0;
+  animation: fade-in 2s ease forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  .neon-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .divider {
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    line-height: 50px;
+  }
+}
