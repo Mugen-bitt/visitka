@@ -7,44 +7,59 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
+// Подготовка директорий
+const logsDir = path.join(__dirname, 'logs');
+if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir);
+
 // Включаем CORS и JSON парсер
 app.use(cors());
 app.use(express.json());
 
-// Раздача статических файлов (твой сайт)
+// Раздача статики
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Логирование всех заходов
+// Логирование посещений
 app.use(async (req, res, next) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     const ua = req.headers['user-agent'];
     const time = new Date().toISOString();
-
     let geo = {};
-    try {
-        const response = await fetch(`https://ipapi.co/${ip}/json/`);
-        geo = await response.json();
-    } catch (e) {
-        console.error('Ошибка geo:', e.message);
+
+    if (!['127.0.0.1', '::1'].includes(ip)) {
+        try {
+            const response = await fetch(`https://ipapi.co/${ip}/json/`);
+            geo = await response.json();
+        } catch (e) {
+            console.error('Ошибка geo:', e.message);
+        }
     }
 
     const log = `${time} | IP: ${ip} | ${geo.city || 'Unknown'}, ${geo.country_name || 'Unknown'} | UA: ${ua}\n`;
-    fs.appendFileSync(path.join(__dirname, 'logs', 'visits.log'), log);
-    console.log(log.trim());
 
+    // Ротация логов при >5 МБ
+    const visitLog = path.join(logsDir, 'visits.log');
+    if (fs.existsSync(visitLog) && fs.statSync(visitLog).size > 5 * 1024 * 1024) {
+        fs.renameSync(visitLog, visitLog.replace('.log', `-${Date.now()}.log`));
+    }
+
+    fs.promises.appendFile(visitLog, log).catch(console.error);
+    console.log(log.trim());
     next();
 });
 
-// Маршрут для аналитики (fetch из index.html)
+// Аналитика
 app.post('/track', (req, res) => {
     const data = req.body;
     const time = new Date().toISOString();
     const log = `[TRACK] ${time} | ${JSON.stringify(data)}\n`;
-
-    fs.appendFileSync(path.join(__dirname, 'logs', 'analytics.log'), log);
+    fs.promises.appendFile(path.join(logsDir, 'analytics.log'), log).catch(console.error);
     console.log(log.trim());
-
     res.json({ status: 'ok' });
+});
+
+// 404 fallback
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 // Запуск сервера

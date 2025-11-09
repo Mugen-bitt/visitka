@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | Pavel Evstigneev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Space Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            color: #ffeb99;
+            text-shadow: 0 0 8px #ffeb99, 0 0 25px #ffeb99;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #eaeaea;
+            margin-bottom: 30px;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .icon {
+            text-decoration: none;
+            color: #fff;
+            border: 2px solid #ffeb99;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 235, 153, 0.08);
+            box-shadow: 0 0 12px rgba(255, 235, 153, 0.4);
+        }
+
+        .icon:hover {
+            background: #ffeb99;
+            color: #000;
+            transform: scale(1.15);
+            box-shadow: 0 0 25px #ffeb99, 0 0 50px #ffeb99;
+        }
+
+        .timer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<h1>404 — Страница не найдена</h1>
+<p>Кажется, ты забрёл туда, где даже тест-кейсы не проходили.<br>Через 10 секунд я верну тебя на главную.</p>
+
+<div class="icons">
+    <a href="https://t.me/mugen_s" target="_blank" class="icon tg" title="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+    <a href="https://linkedin.com/in/mugen" target="_blank" class="icon in" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a href="mailto:pavelupp@gmail.com" class="icon mail" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+</div>
+
+<div class="timer">Возврат на главную через <span id="count">10</span> сек...</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+<script>
+    let counter = 10;
+    const span = document.getElementById('count');
+    const interval = setInterval(() => {
+        counter--;
+        span.textContent = counter;
+        if (counter <= 0) {
+            clearInterval(interval);
+            window.location.href = '/';
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
