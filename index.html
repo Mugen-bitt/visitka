@@ -24,16 +24,16 @@
 <body>
 
 <div class="container">
-    <h1 class="neon-title fade-in">Качество начинается с мышления</h1>
+    <h1 class="neon-title fade-in" data-i18n="title">Качество начинается с мышления</h1>
 
     <main class="content fade-in" style="animation-delay: 2.5s;">
-        <p class="intro">
+        <p class="intro" data-i18n="intro">
             Я — Павел, QA Automation Engineer. Помогаю командам создавать стабильные и уверенные продукты, которыми довольны пользователи.<br><br>
             Работаю с API, автоматизацией и бизнес-логикой — выстраиваю тестирование с нуля и беру ответственность за результат.<br><br>
             Если ты читаешь это — возможно, именно с тобой начнётся новая история качества.
         </p>
 
-        <div class="divider">👇 Связь со мной 👇</div>
+        <div class="divider" data-i18n="contact">👇 Связь со мной 👇</div>
 
         <div class="icons">
             <a href="https://t.me/mugen_s" target="_blank" class="icon tg" title="Telegram">
@@ -48,6 +48,48 @@
         </div>
     </main>
 </div>
+
+<!-- Переключатель языка -->
+<div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="jp">JP</button>
+</div>
+
+<script>
+const translations = {
+    ru: {
+        title: 'Качество начинается с мышления',
+        intro: 'Я — Павел, QA Automation Engineer. Помогаю командам создавать стабильные и уверенные продукты, которыми довольны пользователи.<br><br>Работаю с API, автоматизацией и бизнес-логикой — выстраиваю тестирование с нуля и беру ответственность за результат.<br><br>Если ты читаешь это — возможно, именно с тобой начнётся новая история качества.',
+        contact: '👇 Связь со мной 👇'
+    },
+    en: {
+        title: 'Quality starts with thinking',
+        intro: 'I'm Pavel, a QA Automation Engineer. I help teams build stable and reliable products that users love.<br><br>I work with APIs, automation, and business logic — building testing from scratch and taking responsibility for results.<br><br>If you're reading this — perhaps a new story of quality will begin with you.',
+        contact: '👇 Contact me 👇'
+    },
+    jp: {
+        title: '品質は思考から始まる',
+        intro: 'パヴェルです。QAオートメーションエンジニアとして、チームが安定した信頼性の高い製品を作るお手伝いをしています。<br><br>API、自動化、ビジネスロジックに取り組み、ゼロからテストを構築し、結果に責任を持ちます。<br><br>これを読んでいるあなたと、新しい品質の物語が始まるかもしれません。',
+        contact: '👇 連絡先 👇'
+    }
+};
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+        document.documentElement.lang = lang === 'jp' ? 'ja' : lang;
+    });
+});
+</script>
 
 </body>
 </html>
