@@ -4,23 +4,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* GITS Rain Canvas */
+/* Glitch Canvas - скрыт на фоне */
 #matrix-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.25;
+  display: none;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Share Tech Mono', monospace;
-  background: linear-gradient(180deg, #0a0a1a 0%, #0d1525 50%, #0a1015 100%);
-  color: #00d4ff;
+  background: linear-gradient(180deg, #f0f2f5 0%, #e8eaef 50%, #dde0e6 100%);
+  color: #1a1a2e;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -29,18 +23,18 @@ body {
   overflow-y: auto;
 }
 
-/* Контейнер — Ghost in the Shell style */
+/* Контейнер — GITS 2017 style */
 .container {
-  width: 600px;
-  height: 760px;
-  padding: 25px 35px;
-  background: linear-gradient(180deg, rgba(10, 20, 35, 0.92) 0%, rgba(5, 15, 25, 0.95) 100%);
-  border: 1px solid rgba(0, 212, 255, 0.4);
+  width: 550px;
+  height: 700px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(100, 100, 140, 0.2);
   border-radius: 2px;
   box-shadow:
-    0 0 40px rgba(0, 212, 255, 0.15),
-    inset 0 0 100px rgba(0, 0, 0, 0.6),
-    0 0 1px rgba(0, 212, 255, 0.8);
+    0 10px 60px rgba(100, 100, 160, 0.15),
+    0 0 1px rgba(100, 100, 140, 0.3),
+    inset 0 0 0 3px rgba(20, 20, 30, 0.8);
   animation: fade-in-container 1s ease forwards;
   animation-delay: 0.3s;
   opacity: 0;
@@ -49,23 +43,20 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-/* Сетка на фоне */
-.container::after {
-  content: '';
+/* Глитч-эффект - второй план */
+.glitch-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-  background-size: 20px 20px;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 180px;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
+  opacity: 0.6;
 }
 
 @keyframes fade-in-container {
@@ -73,17 +64,17 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Заголовок — чёткий, минимальное свечение */
+/* Заголовок */
 .neon-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   height: 2.4em;
-  color: #00ffff;
-  text-shadow: 0 0 2px rgba(0, 212, 255, 0.5);
-  margin-bottom: 25px;
-  letter-spacing: 3px;
+  color: #1a1a2e;
+  text-shadow: none;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
   overflow: hidden;
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Main content area */
@@ -93,33 +84,33 @@ body {
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Контейнер для абзацев */
 .intro-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 550px;
+  gap: 14px;
+  max-width: 500px;
   margin: 0 auto;
-  height: 370px;
-  min-height: 370px;
-  max-height: 370px;
+  height: 340px;
+  min-height: 340px;
+  max-height: 340px;
   flex-shrink: 0;
 }
 
 /* Каждый абзац */
 .intro-p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  height: 110px;
-  min-height: 110px;
-  max-height: 110px;
-  color: #80e0ff;
+  font-size: 1rem;
+  line-height: 1.65;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  color: #3a3a5e;
   text-align: justify;
   margin: 0;
-  text-shadow: 0 0 8px rgba(0, 212, 255, 0.25);
+  text-shadow: none;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -127,22 +118,22 @@ body {
 /* Нижняя часть */
 .contact-section {
   margin-top: 0;
-  height: 180px;
-  min-height: 180px;
-  max-height: 180px;
+  height: 170px;
+  min-height: 170px;
+  max-height: 170px;
   flex-shrink: 0;
   position: relative;
   z-index: 1;
 }
 
-/* Разделитель — чёткий, минимальное свечение */
+/* Разделитель */
 .divider {
   font-size: 1.4rem;
   font-weight: bold;
   height: 1.8em;
-  color: #00ffff;
-  margin: 20px 0 20px;
-  text-shadow: 0 0 2px rgba(0, 212, 255, 0.5);
+  color: #1a1a2e;
+  margin: 10px 0 15px;
+  text-shadow: none;
   letter-spacing: 4px;
   overflow: hidden;
 }
@@ -157,30 +148,25 @@ body {
 
 .icon {
   text-decoration: none;
-  color: #00d4ff;
-  border: 1px solid rgba(0, 212, 255, 0.6);
+  color: #5566aa;
+  border: 1px solid rgba(100, 120, 180, 0.4);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
-  background: rgba(0, 212, 255, 0.05);
-  box-shadow:
-    0 0 15px rgba(0, 212, 255, 0.2),
-    inset 0 0 15px rgba(0, 212, 255, 0.05);
+  background: rgba(100, 120, 180, 0.05);
+  box-shadow: 0 2px 15px rgba(100, 120, 180, 0.1);
 }
 
 .icon:hover {
-  background: rgba(0, 212, 255, 0.2);
-  color: #fff;
+  background: rgba(100, 120, 180, 0.15);
+  color: #3344aa;
   transform: scale(1.1);
-  box-shadow:
-    0 0 25px rgba(0, 212, 255, 0.5),
-    0 0 50px rgba(0, 212, 255, 0.3),
-    inset 0 0 20px rgba(0, 212, 255, 0.1);
-  border-color: #00ffff;
+  box-shadow: 0 5px 25px rgba(100, 120, 180, 0.25);
+  border-color: #5566aa;
 }
 
 /* Fade-in анимации */
@@ -197,47 +183,47 @@ body {
 /* Мобильная адаптация */
 @media (max-width: 650px) {
   .container {
-    width: 90vw;
-    height: 680px;
-    min-height: 680px;
-    max-height: 680px;
-    margin-top: 20px;
-    padding: 20px 20px;
+    width: 88vw;
+    height: 620px;
+    min-height: 620px;
+    max-height: 620px;
+    margin-top: 15px;
+    padding: 18px 18px;
   }
 
   .neon-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1.4;
-    height: 3em;
-    min-height: 3em;
-    max-height: 3em;
-    margin-bottom: 16px;
+    height: 2.8em;
+    min-height: 2.8em;
+    max-height: 2.8em;
+    margin-bottom: 14px;
   }
 
   .intro-container {
     height: auto;
     min-height: auto;
     max-height: none;
-    gap: 16px;
+    gap: 12px;
   }
 
   .intro-p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    height: 100px;
-    min-height: 100px;
-    max-height: 100px;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    height: 90px;
+    min-height: 90px;
+    max-height: 90px;
   }
 
   .contact-section {
-    height: 160px;
-    min-height: 160px;
-    max-height: 160px;
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
     margin-top: 0;
   }
 
   .divider {
-    margin: 16px 0 16px;
+    margin: 12px 0 12px;
   }
 }
 
@@ -256,31 +242,31 @@ body {
 }
 
 .lang-btn {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 212, 255, 0.5);
-  background: rgba(0, 212, 255, 0.05);
-  color: #00d4ff;
+  border: 1px solid rgba(100, 120, 180, 0.4);
+  background: rgba(100, 120, 180, 0.05);
+  color: #5566aa;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.15);
+  box-shadow: 0 2px 10px rgba(100, 120, 180, 0.1);
 }
 
 .lang-btn:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-  border-color: #00ffff;
+  box-shadow: 0 4px 20px rgba(100, 120, 180, 0.2);
+  border-color: #5566aa;
 }
 
 .lang-btn.active {
-  background: rgba(0, 212, 255, 0.3);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-  border-color: #00ffff;
+  background: rgba(100, 120, 180, 0.2);
+  color: #2233aa;
+  box-shadow: 0 4px 20px rgba(100, 120, 180, 0.3);
+  border-color: #5566aa;
 }
 
 /* Слова и символы */

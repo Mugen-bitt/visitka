@@ -26,6 +26,7 @@
 <canvas id="matrix-rain"></canvas>
 
 <div class="container">
+    <div class="glitch-overlay" id="glitch-overlay"></div>
     <h1 class="neon-title" data-i18n="title">Качество начинается с мышления</h1>
 
     <main class="content">
@@ -61,54 +62,90 @@
 </div>
 
 <script>
-// Matrix Rain Background
-const canvas = document.getElementById('matrix-rain');
-const ctx = canvas.getContext('2d');
+// GITS 2017 Dynamic Glitch Effect
+const glitchOverlay = document.getElementById('glitch-overlay');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function createGlitchLine() {
+    const line = document.createElement('div');
+    const height = Math.random() * 4 + 1;
+    const y = Math.random() * 100;
+    const width = Math.random() * 30 + 70; // 70-100% width
+    const xOffset = Math.random() * 15;
+    const duration = Math.random() * 0.3 + 0.1;
+    const delay = Math.random() * 2;
 
-const matrixRainChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const fontSize = 14;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
+    // Random color variation - subtle
+    const colors = [
+        'rgba(100, 120, 180, 0.2)',
+        'rgba(150, 130, 200, 0.18)',
+        'rgba(80, 100, 160, 0.15)',
+        'rgba(120, 100, 180, 0.22)',
+        'rgba(180, 150, 200, 0.12)'
+    ];
+    const color = colors[Math.floor(Math.random() * colors.length)];
 
-function drawMatrixRain() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    line.style.cssText = `
+        position: absolute;
+        left: ${xOffset}%;
+        top: ${y}%;
+        width: ${width}%;
+        height: ${height}px;
+        background: ${color};
+        animation: glitchSlide ${duration}s ease-in-out ${delay}s infinite;
+        opacity: 0;
+    `;
 
-    ctx.fillStyle = '#00ff41';
-    ctx.font = fontSize + 'px monospace';
+    return line;
+}
 
-    for (let i = 0; i < drops.length; i++) {
-        const char = matrixRainChars[Math.floor(Math.random() * matrixRainChars.length)];
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
-
-        // Brighter cyan for the head of the stream
-        if (Math.random() > 0.98) {
-            ctx.fillStyle = '#fff';
-        } else {
-            ctx.fillStyle = '#00d4ff';
-        }
-
-        ctx.fillText(char, x, y);
-
-        // Reset drop to top with random chance
-        if (y > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
+// Create glitch lines
+function initGlitch() {
+    glitchOverlay.innerHTML = '';
+    for (let i = 0; i < 8; i++) {
+        glitchOverlay.appendChild(createGlitchLine());
     }
 }
 
-setInterval(drawMatrixRain, 50);
+// Glitch burst - creates sudden intense effect
+function glitchBurst() {
+    const burstLines = Math.floor(Math.random() * 5) + 3;
+    for (let i = 0; i < burstLines; i++) {
+        const line = document.createElement('div');
+        const height = Math.random() * 8 + 2;
+        const y = Math.random() * 100;
+        const xShift = (Math.random() - 0.5) * 15;
 
-// Resize canvas on window resize
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+        line.style.cssText = `
+            position: absolute;
+            left: 0;
+            top: ${y}%;
+            width: 100%;
+            height: ${height}px;
+            background: rgba(${100 + Math.random()*80}, ${100 + Math.random()*60}, ${180 + Math.random()*40}, ${0.15 + Math.random()*0.15});
+            transform: translateX(${xShift}px);
+        `;
+
+        glitchOverlay.appendChild(line);
+
+        setTimeout(() => line.remove(), 100 + Math.random() * 150);
+    }
+}
+
+// Add CSS animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes glitchSlide {
+        0%, 100% { opacity: 0; transform: translateX(0); }
+        10% { opacity: 1; transform: translateX(-5px); }
+        20% { opacity: 1; transform: translateX(3px); }
+        30% { opacity: 0; transform: translateX(0); }
+    }
+`;
+document.head.appendChild(style);
+
+initGlitch();
+setInterval(initGlitch, 3000);
+setInterval(glitchBurst, 800 + Math.random() * 1500);
 
 const translations = {
     ru: {
