@@ -211,7 +211,7 @@ body {
     height: 3em;
     min-height: 3em;
     max-height: 3em;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .intro-container {
@@ -234,6 +234,10 @@ body {
     min-height: 160px;
     max-height: 160px;
     margin-top: 0;
+  }
+
+  .divider {
+    margin: 16px 0 16px;
   }
 }
 
