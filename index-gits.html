@@ -18,7 +18,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Стили -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-gits.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -170,31 +170,21 @@ function scrambleText(element, finalText, duration = 1800) {
         const frameDelay = duration / totalFrames;
         let frame = 0;
 
-        const charMap = [];
+        // Split into words to preserve proper line breaks
+        const words = finalText.split(' ');
+        let charIndex = 0;
+        const charMap = []; // maps global char index to {wordIdx, charIdx}
 
-        if (useCJK) {
-            // For CJK: fixed width per character + word-break on container for wrapping
-            element.classList.add('cjk-text');
-            element.innerHTML = finalText.split('').map((char, idx) => {
+        element.innerHTML = words.map((word, wordIdx) => {
+            const wordChars = word.split('').map((char, idx) => {
                 const width = measureChar(char, element);
                 const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-                charMap.push({ char });
-                return `<span class="char cjk" style="width:${width}px">${randomChar}</span>`;
+                charMap.push({ wordIdx, charIdx: idx, char });
+                charIndex++;
+                return `<span class="char" style="width:${width}px">${randomChar}</span>`;
             }).join('');
-        } else {
-            // For Latin: split into words to preserve proper line breaks
-            element.classList.remove('cjk-text');
-            const words = finalText.split(' ');
-            element.innerHTML = words.map((word, wordIdx) => {
-                const wordChars = word.split('').map((char, idx) => {
-                    const width = measureChar(char, element);
-                    const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-                    charMap.push({ wordIdx, charIdx: idx, char });
-                    return `<span class="char" style="width:${width}px">${randomChar}</span>`;
-                }).join('');
-                return `<span class="word">${wordChars}</span>`;
-            }).join(' ');
-        }
+            return `<span class="word">${wordChars}</span>`;
+        }).join(' ');
 
         const allChars = element.querySelectorAll('.char');
 
