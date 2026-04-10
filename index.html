@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Качество — это архитектура | Pavel Evstigneev</title>
+    <title>Pavel Evstigneev | QA Automation Engineer</title>
 
     <!-- SEO и Open Graph -->
-    <meta name="description" content="Я — Паша, QA-auto Engineer. Помогаю командам создавать стабильные продукты с уверенностью в качестве.">
-    <meta property="og:title" content="Качество — это архитектура | Pavel Evstigneev">
-    <meta property="og:description" content="QA-auto Engineer, работающий с API, автоматизацией и бизнес-логикой.">
+    <meta name="description" content="QA Automation Engineer с 4+ годами опыта. Автоматизация тестирования, CI/CD, Java-стек. FinTech, Marketplaces, Web/API.">
+    <meta property="og:title" content="Pavel Evstigneev | QA Automation Engineer">
+    <meta property="og:description" content="QA-инженер с опытом в автоматизации, CI/CD и интеграционном тестировании.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://example.com">
     <meta property="og:image" content="https://example.com/preview.jpg">
@@ -23,162 +23,414 @@
 </head>
 <body>
 
-<canvas id="matrix-rain"></canvas>
 
-<div class="container">
-    <div class="glitch-overlay" id="glitch-overlay"></div>
-    <h1 class="neon-title" data-i18n="title">Качество начинается с мышления</h1>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="neon-title" data-i18n="title">Evstigneev Pavel</h1>
+        <p class="hero-subtitle" data-i18n="subtitle">QA Automation Engineer</p>
+        <div class="hero-intro">
+            <p data-i18n="p1">QA-инженер с 4+ годами опыта тестирования веб-сервисов и API. Комбинирую ручное тестирование с автоматизацией на TypeScript и Java.</p>
+            <p data-i18n="p2">Покрываю UI, API и интеграционный слой — с отчётностью через Allure и запуском в CI. Помогаю стабилизировать регрессы и ускорить релизы.</p>
+        </div>
+        <div class="hero-contacts">
+            <a href="https://t.me/mugen_s" target="_blank" class="icon" title="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://linkedin.com/in/mugen" target="_blank" class="icon" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:pavelupp@gmail.com" class="icon" title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="jp">JP</button>
+            <button class="lang-btn" data-lang="cn">CN</button>
+        </div>
+        <a href="#experience" class="scroll-hint">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
 
-    <main class="content">
-        <div class="intro-container">
-            <p class="intro-p" data-i18n="p1">Я — Павел, QA Automation Engineer. Помогаю командам создавать стабильные и уверенные продукты, которыми довольны пользователи.</p>
-            <p class="intro-p" data-i18n="p2">Работаю с API, автоматизацией и бизнес-логикой — выстраиваю тестирование с нуля и беру ответственность за результат.</p>
-            <p class="intro-p" data-i18n="p3">Если ты читаешь это — возможно, именно с тобой начнётся новая история качества.</p>
+<!-- Experience Section -->
+<section class="section" id="experience">
+    <h2 class="section-title" data-i18n="exp_title">Опыт работы</h2>
+
+    <div class="timeline">
+        <!-- Project 0: FLORA - Current -->
+        <div class="timeline-item" data-project="flora">
+            <div class="timeline-marker current"></div>
+            <div class="timeline-content">
+                <span class="current-badge" data-i18n="current">Текущий проект</span>
+                <div class="project-header">
+                    <h3 data-i18n="proj0_name">FLORA — Интеллектуальная ОС</h3>
+                    <span class="project-type" data-i18n="proj0_type">Automotive CRM, Рольф Тех</span>
+                </div>
+                <div class="tech-stack">
+                    <span>JavaScript</span><span>TypeScript</span><span>Playwright</span><span>REST API</span><span>Kafka</span><span>TestOps</span><span>PostgreSQL</span><span>CI/CD</span>
+                </div>
+                <ul class="achievements" data-i18n-list="proj0_achievements">
+                    <li>Автоматизировал smoke и regression тесты — <strong>ускорил прохождение релизов</strong></li>
+                    <li>Пишу UI и API автотесты для нескольких команд — единый стандарт качества</li>
+                    <li>Покрыл критичные бизнес-флоу продаж автомобилей автотестами</li>
+                    <li>Внедрил параллельный запуск тестов — <strong>сократил время прогона в 2 раза</strong></li>
+                    <li>Настроил автоматическую генерацию отчётов по результатам тестирования</li>
+                    <li>Участвую в code review автотестов — повышаю качество кода в команде</li>
+                </ul>
+                <div class="result" data-i18n="proj0_result">
+                    <i class="fa-solid fa-car"></i>
+                    Обеспечиваю стабильность CRM-системы для крупнейшего автодилера России
+                </div>
+            </div>
         </div>
 
-        <div class="contact-section">
-            <div class="divider" data-i18n="contact">Связь со мной</div>
-
-            <div class="icons">
-                <a href="https://t.me/mugen_s" target="_blank" class="icon tg" title="Telegram">
-                    <i class="fa-brands fa-telegram"></i>
-                </a>
-                <a href="https://linkedin.com/in/mugen" target="_blank" class="icon in" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:pavelupp@gmail.com" class="icon mail" title="Email">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
-
-            <div class="lang-switcher">
-                <button class="lang-btn active" data-lang="ru">RU</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="jp">JP</button>
-                <button class="lang-btn" data-lang="cn">CN</button>
+        <!-- Project 1: Digital Lending -->
+        <div class="timeline-item" data-project="fintech">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <div class="project-header">
+                    <h3 data-i18n="proj1_name">Digital Lending Platform</h3>
+                    <span class="project-type" data-i18n="proj1_type">FinTech, Web + Mobile</span>
+                </div>
+                <div class="tech-stack">
+                    <span>Java</span><span>RestAssured</span><span>Selenide</span><span>JUnit5</span><span>Allure</span><span>GitLab CI</span><span>PostgreSQL</span><span>Kafka</span>
+                </div>
+                <ul class="achievements" data-i18n-list="proj1_achievements">
+                    <li>Автоматизировал оформление и расчёт займа — <strong>40% регресса покрыто автотестами</strong></li>
+                    <li>Настроил CI/CD-пайплайн с автозапуском smoke/regression — <strong>время регресса с 3 дней до 40 минут</strong></li>
+                    <li>Разработал систему data builders — <strong>снизил флаки-тесты на 20%</strong></li>
+                    <li>Внедрил тестирование микросервисной архитектуры через Kafka — <strong>покрытие async-взаимодействий</strong></li>
+                    <li>Создал библиотеку переиспользуемых тестовых утилит для команды</li>
+                </ul>
+                <div class="result" data-i18n="proj1_result">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Повысил надёжность релизов, снизил ручной регресс на 40%
+                </div>
             </div>
         </div>
-    </main>
-</div>
+
+        <!-- Project 2: Skin Trading -->
+        <div class="timeline-item" data-project="csgo">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <div class="project-header">
+                    <h3 data-i18n="proj2_name">Skin Trading Marketplace</h3>
+                    <span class="project-type" data-i18n="proj2_type">B2C Platform, 100k+ пользователей</span>
+                </div>
+                <div class="tech-stack">
+                    <span>Java</span><span>REST API</span><span>Postman</span><span>Charles Proxy</span><span>MongoDB</span>
+                </div>
+                <ul class="achievements" data-i18n-list="proj2_achievements">
+                    <li>Тестировал авторизацию, переводы, интеграции с Steam API</li>
+                    <li>Выявил уязвимость в логике передачи скинов — <strong>внедрена 2FA после фикса</strong></li>
+                    <li>Оптимизировал регрессию — <strong>покрытие +35%, баги на проде -60%</strong></li>
+                    <li>Проверял локализацию под китайский рынок (интерфейс, валюты, символы)</li>
+                    <li>Тестировал real-time уведомления и WebSocket соединения</li>
+                    <li>Провёл нагрузочное тестирование — <strong>платформа выдержала 5x пиковую нагрузку</strong></li>
+                </ul>
+                <div class="result" data-i18n="proj2_result">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Обеспечил стабильность при 100k+ пользователей, минимизировал инциденты безопасности
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Construction Platform -->
+        <div class="timeline-item" data-project="construction">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <div class="project-header">
+                    <h3 data-i18n="proj3_name">Web Platform for Construction</h3>
+                    <span class="project-type" data-i18n="proj3_type">1C Integration, Enterprise</span>
+                </div>
+                <div class="tech-stack">
+                    <span>DevTools</span><span>Postman</span><span>REST/JSON</span><span>RabbitMQ</span><span>DBeaver</span>
+                </div>
+                <ul class="achievements" data-i18n-list="proj3_achievements">
+                    <li>Тестировал интеграцию с 1С:Документооборот API и обмен данными</li>
+                    <li>Покрыл автотестами REST-запросы на загрузку и проверку документов</li>
+                    <li>Проверял корректность данных между 1С и веб-интерфейсом</li>
+                    <li>Настроил smoke-проверки перед каждым деплоем</li>
+                    <li>Разработал тест-кейсы для сложных бизнес-сценариев документооборота</li>
+                    <li>Автоматизировал проверку отчётов и выгрузок — <strong>экономия 4 часов в неделю</strong></li>
+                </ul>
+                <div class="result" data-i18n="proj3_result">
+                    <i class="fa-solid fa-clock"></i>
+                    Сократил время ручной проверки API на 50%, повысил стабильность интеграции
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section section-contact" id="contact">
+    <h2 class="section-title" data-i18n="contact">Связь со мной</h2>
+    <div class="contact-grid">
+        <a href="https://t.me/mugen_s" target="_blank" class="contact-card">
+            <i class="fa-brands fa-telegram"></i>
+            <span>Telegram</span>
+        </a>
+        <a href="https://linkedin.com/in/mugen" target="_blank" class="contact-card">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+        </a>
+        <a href="mailto:pavelupp@gmail.com" class="contact-card">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+        </a>
+    </div>
+</section>
 
 <script>
-// GITS 2017 Dynamic Glitch Effect
-const glitchOverlay = document.getElementById('glitch-overlay');
-
-function createGlitchLine() {
-    const line = document.createElement('div');
-    const height = Math.random() * 4 + 1;
-    const y = Math.random() * 100;
-    const width = Math.random() * 30 + 70; // 70-100% width
-    const xOffset = Math.random() * 15;
-    const duration = Math.random() * 0.3 + 0.1;
-    const delay = Math.random() * 2;
-
-    // Random color variation - subtle
-    const colors = [
-        'rgba(100, 120, 180, 0.2)',
-        'rgba(150, 130, 200, 0.18)',
-        'rgba(80, 100, 160, 0.15)',
-        'rgba(120, 100, 180, 0.22)',
-        'rgba(180, 150, 200, 0.12)'
-    ];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-
-    line.style.cssText = `
-        position: absolute;
-        left: ${xOffset}%;
-        top: ${y}%;
-        width: ${width}%;
-        height: ${height}px;
-        background: ${color};
-        animation: glitchSlide ${duration}s ease-in-out ${delay}s infinite;
-        opacity: 0;
-    `;
-
-    return line;
-}
-
-// Create glitch lines
-function initGlitch() {
-    glitchOverlay.innerHTML = '';
-    for (let i = 0; i < 8; i++) {
-        glitchOverlay.appendChild(createGlitchLine());
-    }
-}
-
-// Glitch burst - creates sudden intense effect
-function glitchBurst() {
-    const burstLines = Math.floor(Math.random() * 5) + 3;
-    for (let i = 0; i < burstLines; i++) {
-        const line = document.createElement('div');
-        const height = Math.random() * 8 + 2;
-        const y = Math.random() * 100;
-        const xShift = (Math.random() - 0.5) * 15;
-
-        line.style.cssText = `
-            position: absolute;
-            left: 0;
-            top: ${y}%;
-            width: 100%;
-            height: ${height}px;
-            background: rgba(${100 + Math.random()*80}, ${100 + Math.random()*60}, ${180 + Math.random()*40}, ${0.15 + Math.random()*0.15});
-            transform: translateX(${xShift}px);
-        `;
-
-        glitchOverlay.appendChild(line);
-
-        setTimeout(() => line.remove(), 100 + Math.random() * 150);
-    }
-}
-
-// Add CSS animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes glitchSlide {
-        0%, 100% { opacity: 0; transform: translateX(0); }
-        10% { opacity: 1; transform: translateX(-5px); }
-        20% { opacity: 1; transform: translateX(3px); }
-        30% { opacity: 0; transform: translateX(0); }
-    }
-`;
-document.head.appendChild(style);
-
-initGlitch();
-setInterval(initGlitch, 3000);
-setInterval(glitchBurst, 800 + Math.random() * 1500);
-
+// Translations
 const translations = {
     ru: {
-        title: 'Качество начинается с мышления',
-        p1: 'Я — Павел, QA Automation Engineer. Помогаю командам создавать стабильные и уверенные продукты, которыми довольны пользователи.',
-        p2: 'Работаю с API, автоматизацией и бизнес-логикой — выстраиваю тестирование с нуля и беру ответственность за результат.',
-        p3: 'Если ты читаешь это — возможно, именно с тобой начнётся новая история качества.',
-        contact: 'Связь со мной'
+        title: 'Evstigneev Pavel',
+        subtitle: 'QA Automation Engineer',
+        p1: 'QA-инженер с 4+ годами опыта тестирования веб-сервисов и API. Комбинирую ручное тестирование с автоматизацией на TypeScript и Java.',
+        p2: 'Покрываю UI, API и интеграционный слой — с отчётностью через Allure и запуском в CI. Помогаю стабилизировать регрессы и ускорить релизы.',
+        contact: 'Связь со мной',
+        exp_title: 'Опыт работы',
+        current: 'Текущий проект',
+        proj0_name: 'FLORA — Интеллектуальная ОС',
+        proj0_type: 'Automotive CRM, Рольф Тех',
+        proj0_achievements: [
+            'Автоматизировал smoke и regression тесты — <strong>ускорил прохождение релизов</strong>',
+            'Пишу UI и API автотесты для нескольких команд — единый стандарт качества',
+            'Покрыл критичные бизнес-флоу продаж автомобилей автотестами',
+            'Внедрил параллельный запуск тестов — <strong>сократил время прогона в 2 раза</strong>',
+            'Настроил автоматическую генерацию отчётов по результатам тестирования',
+            'Участвую в code review автотестов — повышаю качество кода в команде'
+        ],
+        proj0_result: 'Обеспечиваю стабильность CRM-системы для крупнейшего автодилера России',
+        proj1_name: 'Digital Lending Platform',
+        proj1_type: 'FinTech, Web + Mobile',
+        proj1_achievements: [
+            'Автоматизировал оформление и расчёт займа — <strong>40% регресса покрыто автотестами</strong>',
+            'Настроил CI/CD-пайплайн с автозапуском smoke/regression — <strong>время регресса с 3 дней до 40 минут</strong>',
+            'Разработал систему data builders — <strong>снизил флаки-тесты на 20%</strong>',
+            'Внедрил тестирование микросервисной архитектуры через Kafka — <strong>покрытие async-взаимодействий</strong>',
+            'Создал библиотеку переиспользуемых тестовых утилит для команды'
+        ],
+        proj1_result: 'Повысил надёжность релизов, снизил ручной регресс на 40%',
+        proj2_name: 'Skin Trading Marketplace',
+        proj2_type: 'B2C Platform, 100k+ пользователей',
+        proj2_achievements: [
+            'Тестировал авторизацию, переводы, интеграции с Steam API',
+            'Выявил уязвимость в логике передачи скинов — <strong>внедрена 2FA после фикса</strong>',
+            'Оптимизировал регрессию — <strong>покрытие +35%, баги на проде -60%</strong>',
+            'Проверял локализацию под китайский рынок (интерфейс, валюты, символы)',
+            'Тестировал real-time уведомления и WebSocket соединения',
+            'Провёл нагрузочное тестирование — <strong>платформа выдержала 5x пиковую нагрузку</strong>'
+        ],
+        proj2_result: 'Обеспечил стабильность при 100k+ пользователей, минимизировал инциденты безопасности',
+        proj3_name: 'Web Platform for Construction',
+        proj3_type: '1C Integration, Enterprise',
+        proj3_achievements: [
+            'Тестировал интеграцию с 1С:Документооборот API и обмен данными',
+            'Покрыл автотестами REST-запросы на загрузку и проверку документов',
+            'Проверял корректность данных между 1С и веб-интерфейсом',
+            'Настроил smoke-проверки перед каждым деплоем',
+            'Разработал тест-кейсы для сложных бизнес-сценариев документооборота',
+            'Автоматизировал проверку отчётов и выгрузок — <strong>экономия 4 часов в неделю</strong>'
+        ],
+        proj3_result: 'Сократил время ручной проверки API на 50%, повысил стабильность интеграции'
     },
     en: {
-        title: 'Quality starts with thinking',
-        p1: "I'm Pavel, a QA Automation Engineer. I help teams build stable and reliable products that users love.",
-        p2: "I work with APIs, automation, and business logic — building testing from scratch and taking responsibility for results.",
-        p3: "If you're reading this — perhaps a new story of quality will begin with you.",
-        contact: 'Contact me'
+        title: 'Evstigneev Pavel',
+        subtitle: 'QA Automation Engineer',
+        p1: 'QA Engineer with 4+ years of experience testing web services and APIs. Combining manual testing with TypeScript and Java automation.',
+        p2: 'Covering UI, API and integration layers — with Allure reporting and CI execution. Helping stabilize regressions and speed up releases.',
+        contact: 'Contact me',
+        exp_title: 'Experience',
+        current: 'Current project',
+        proj0_name: 'FLORA — Intelligent OS',
+        proj0_type: 'Automotive CRM, Rolf Tech',
+        proj0_achievements: [
+            'Automated smoke and regression tests — <strong>accelerated release cycles</strong>',
+            'Writing UI and API autotests for multiple teams — unified quality standard',
+            'Covered critical car sales business flows with autotests',
+            'Implemented parallel test execution — <strong>reduced run time by 2x</strong>',
+            'Set up automatic test report generation',
+            'Participating in autotest code review — improving team code quality'
+        ],
+        proj0_result: 'Ensuring CRM stability for Russia\'s largest car dealer',
+        proj1_name: 'Digital Lending Platform',
+        proj1_type: 'FinTech, Web + Mobile',
+        proj1_achievements: [
+            'Automated loan application and calculation — <strong>40% regression covered by autotests</strong>',
+            'Set up CI/CD pipeline with auto-run smoke/regression — <strong>regression time from 3 days to 40 minutes</strong>',
+            'Developed data builders system — <strong>reduced flaky tests by 20%</strong>',
+            'Implemented microservice architecture testing via Kafka — <strong>async interaction coverage</strong>',
+            'Created reusable test utilities library for the team'
+        ],
+        proj1_result: 'Improved release reliability, reduced manual regression by 40%',
+        proj2_name: 'Skin Trading Marketplace',
+        proj2_type: 'B2C Platform, 100k+ users',
+        proj2_achievements: [
+            'Tested authorization, transfers, Steam API integrations',
+            'Discovered vulnerability in skin transfer logic — <strong>2FA implemented after fix</strong>',
+            'Optimized regression — <strong>coverage +35%, production bugs -60%</strong>',
+            'Verified localization for Chinese market (UI, currencies, symbols)',
+            'Tested real-time notifications and WebSocket connections',
+            'Conducted load testing — <strong>platform handled 5x peak load</strong>'
+        ],
+        proj2_result: 'Ensured stability with 100k+ users, minimized security incidents',
+        proj3_name: 'Web Platform for Construction',
+        proj3_type: '1C Integration, Enterprise',
+        proj3_achievements: [
+            'Tested integration with 1C:Document API and data exchange',
+            'Covered REST requests for document upload and verification with autotests',
+            'Verified data correctness between 1C and web interface',
+            'Set up smoke checks before each deploy',
+            'Developed test cases for complex document workflow scenarios',
+            'Automated report and export verification — <strong>saving 4 hours weekly</strong>'
+        ],
+        proj3_result: 'Reduced manual API testing time by 50%, improved integration stability'
     },
     jp: {
-        title: '品質は思考から始まる',
-        p1: 'パヴェルです。QAオートメーションエンジニアとして、チームが安定した信頼性の高い製品を作るお手伝いをしています。',
-        p2: 'API、自動化、ビジネスロジックに取り組み、ゼロからテストを構築し、結果に責任を持ちます。',
-        p3: 'これを読んでいるあなたと、新しい品質の物語が始まるかもしれません。',
-        contact: '連絡先'
+        title: 'Evstigneev Pavel',
+        subtitle: 'QAオートメーションエンジニア',
+        p1: 'WebサービスとAPIのテストで4年以上の経験を持つQAエンジニア。手動テストとTypeScriptおよびJavaの自動化を組み合わせています。',
+        p2: 'UI、API、統合レイヤーをカバー — Allureレポートとci実行。リグレッションの安定化とリリースの高速化に貢献。',
+        contact: '連絡先',
+        exp_title: '職歴',
+        current: '現在のプロジェクト',
+        proj0_name: 'FLORA — インテリジェントOS',
+        proj0_type: '自動車CRM、Rolf Tech',
+        proj0_achievements: [
+            'smokeとregressionテストを自動化 — <strong>リリースサイクルを加速</strong>',
+            '複数チーム向けにUIとAPIの自動テストを作成 — 統一された品質基準',
+            '自動車販売の重要なビジネスフローを自動テストでカバー',
+            '並列テスト実行を導入 — <strong>実行時間を2倍短縮</strong>',
+            'テスト結果レポートの自動生成を設定',
+            '自動テストのコードレビューに参加 — チームのコード品質を向上'
+        ],
+        proj0_result: 'ロシア最大の自動車ディーラー向けCRMの安定性を確保',
+        proj1_name: 'デジタル融資プラットフォーム',
+        proj1_type: 'FinTech、Web + Mobile',
+        proj1_achievements: [
+            'ローン申請と計算を自動化 — <strong>リグレッションの40%を自動テストでカバー</strong>',
+            'smoke/regressionの自動実行CI/CDパイプラインを構築 — <strong>リグレッション時間を3日から40分に短縮</strong>',
+            'データビルダーシステムを開発 — <strong>フレイキーテストを20%削減</strong>',
+            'Kafkaを通じたマイクロサービステストを導入 — <strong>非同期インタラクションのカバレッジ</strong>',
+            'チーム向けの再利用可能なテストユーティリティライブラリを作成'
+        ],
+        proj1_result: 'リリースの信頼性を向上、手動リグレッションを40%削減',
+        proj2_name: 'スキン取引マーケットプレイス',
+        proj2_type: 'B2Cプラットフォーム、10万人以上のユーザー',
+        proj2_achievements: [
+            '認証、転送、Steam API統合をテスト',
+            'スキン転送ロジックの脆弱性を発見 — <strong>修正後に2FAを導入</strong>',
+            'リグレッションを最適化 — <strong>カバレッジ+35%、本番バグ-60%</strong>',
+            '中国市場向けローカライゼーションを検証（UI、通貨、記号）',
+            'リアルタイム通知とWebSocket接続をテスト',
+            '負荷テストを実施 — <strong>プラットフォームが5倍のピーク負荷に耐えた</strong>'
+        ],
+        proj2_result: '10万人以上のユーザーで安定性を確保、セキュリティインシデントを最小化',
+        proj3_name: '建設Webプラットフォーム',
+        proj3_type: '1C統合、エンタープライズ',
+        proj3_achievements: [
+            '1C:ドキュメントAPIとデータ交換の統合をテスト',
+            'ドキュメントのアップロードと検証のRESTリクエストを自動テストでカバー',
+            '1CとWebインターフェース間のデータ正確性を検証',
+            '各デプロイ前のsmokeチェックを設定',
+            '複雑な文書ワークフローシナリオのテストケースを開発',
+            'レポートとエクスポートの検証を自動化 — <strong>週4時間の節約</strong>'
+        ],
+        proj3_result: '手動APIテスト時間を50%削減、統合の安定性を向上'
     },
     cn: {
-        title: '质量始于思维',
-        p1: '我是帕维尔，一名QA自动化工程师。我帮助团队构建用户喜爱的稳定可靠的产品。',
-        p2: '我专注于API、自动化和业务逻辑——从零开始构建测试体系，并对结果负责。',
-        p3: '如果你正在阅读这段文字——也许一个关于质量的新故事将与你一起开始。',
-        contact: '联系我'
+        title: 'Evstigneev Pavel',
+        subtitle: 'QA自动化工程师',
+        p1: '拥有4年以上Web服务和API测试经验的QA工程师。将手动测试与TypeScript和Java自动化相结合。',
+        p2: '覆盖UI、API和集成层 — 使用Allure报告和CI执行。帮助稳定回归测试并加速发布。',
+        contact: '联系我',
+        exp_title: '工作经历',
+        current: '当前项目',
+        proj0_name: 'FLORA — 智能操作系统',
+        proj0_type: '汽车CRM，Rolf Tech',
+        proj0_achievements: [
+            '自动化smoke和regression测试 — <strong>加速发布周期</strong>',
+            '为多个团队编写UI和API自动测试 — 统一的质量标准',
+            '用自动测试覆盖了关键的汽车销售业务流程',
+            '实现了并行测试执行 — <strong>将运行时间缩短2倍</strong>',
+            '设置了测试结果报告的自动生成',
+            '参与自动测试代码审查 — 提高团队代码质量'
+        ],
+        proj0_result: '确保俄罗斯最大汽车经销商CRM系统的稳定性',
+        proj1_name: '数字借贷平台',
+        proj1_type: 'FinTech，Web + Mobile',
+        proj1_achievements: [
+            '自动化贷款申请和计算 — <strong>40%的回归测试被自动测试覆盖</strong>',
+            '设置了带有smoke/regression自动运行的CI/CD流水线 — <strong>回归时间从3天缩短到40分钟</strong>',
+            '开发了数据构建器系统 — <strong>减少了20%的不稳定测试</strong>',
+            '通过Kafka实现了微服务架构测试 — <strong>异步交互覆盖</strong>',
+            '为团队创建了可重用的测试工具库'
+        ],
+        proj1_result: '提高了发布可靠性，减少了40%的手动回归',
+        proj2_name: '皮肤交易市场',
+        proj2_type: 'B2C平台，10万+用户',
+        proj2_achievements: [
+            '测试了授权、转账、Steam API集成',
+            '发现了皮肤转移逻辑中的漏洞 — <strong>修复后实施了2FA</strong>',
+            '优化了回归测试 — <strong>覆盖率+35%，生产环境bug-60%</strong>',
+            '验证了中国市场的本地化（界面、货币、符号）',
+            '测试了实时通知和WebSocket连接',
+            '进行了负载测试 — <strong>平台承受了5倍峰值负载</strong>'
+        ],
+        proj2_result: '确保了10万+用户的稳定性，最小化了安全事件',
+        proj3_name: '建筑Web平台',
+        proj3_type: '1C集成，企业级',
+        proj3_achievements: [
+            '测试了与1C:文档API的集成和数据交换',
+            '用自动测试覆盖了文档上传和验证的REST请求',
+            '验证了1C和Web界面之间的数据正确性',
+            '设置了每次部署前的smoke检查',
+            '为复杂的文档工作流场景开发了测试用例',
+            '自动化了报告和导出验证 — <strong>每周节省4小时</strong>'
+        ],
+        proj3_result: '减少了50%的手动API测试时间，提高了集成稳定性'
     }
 };
 
-// Matrix scramble effect
+// Apply translations
+function applyTranslations(lang) {
+    const t = translations[lang];
+
+    // Simple text translations
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key]) {
+            if (typeof t[key] === 'string') {
+                el.innerHTML = t[key];
+            }
+        }
+    });
+
+    // List translations (achievements)
+    document.querySelectorAll('[data-i18n-list]').forEach(ul => {
+        const key = ul.dataset.i18nList;
+        if (t[key] && Array.isArray(t[key])) {
+            const items = ul.querySelectorAll('li');
+            t[key].forEach((text, i) => {
+                if (items[i]) {
+                    items[i].innerHTML = text;
+                }
+            });
+        }
+    });
+
+    const langMap = { jp: 'ja', cn: 'zh' };
+    document.documentElement.lang = langMap[lang] || lang;
+}
+
+// Scramble effect for hero title
 const latinChars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*!?+=';
 const japaneseChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
 
@@ -186,63 +438,29 @@ function isCJK(text) {
     return /[\u3040-\u30ff\u4e00-\u9faf]/.test(text);
 }
 
-// Measure character width
-function measureChar(char, element) {
-    const temp = document.createElement('span');
-    temp.style.visibility = 'hidden';
-    temp.style.position = 'absolute';
-    temp.style.font = getComputedStyle(element).font;
-    temp.textContent = char;
-    document.body.appendChild(temp);
-    const width = temp.getBoundingClientRect().width;
-    document.body.removeChild(temp);
-    return width;
-}
-
-function scrambleText(element, finalText, duration = 1800) {
+function scrambleText(element, finalText, duration = 1200) {
     return new Promise(resolve => {
         const useCJK = isCJK(finalText);
         const scrambleChars = useCJK ? japaneseChars : latinChars;
-        const totalFrames = 45;
+        const totalFrames = 30;
         const frameDelay = duration / totalFrames;
         let frame = 0;
 
-        const charMap = [];
-
-        if (useCJK) {
-            // For CJK: fixed width per character + word-break on container for wrapping
-            element.classList.add('cjk-text');
-            element.innerHTML = finalText.split('').map((char, idx) => {
-                const width = measureChar(char, element);
-                const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-                charMap.push({ char });
-                return `<span class="char cjk" style="width:${width}px">${randomChar}</span>`;
-            }).join('');
-        } else {
-            // For Latin: split into words to preserve proper line breaks
-            element.classList.remove('cjk-text');
-            const words = finalText.split(' ');
-            element.innerHTML = words.map((word, wordIdx) => {
-                const wordChars = word.split('').map((char, idx) => {
-                    const width = measureChar(char, element);
-                    const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-                    charMap.push({ wordIdx, charIdx: idx, char });
-                    return `<span class="char" style="width:${width}px">${randomChar}</span>`;
-                }).join('');
-                return `<span class="word">${wordChars}</span>`;
-            }).join(' ');
-        }
+        const chars = finalText.split('');
+        element.innerHTML = chars.map(() => {
+            const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+            return `<span class="char">${randomChar}</span>`;
+        }).join('');
 
         const allChars = element.querySelectorAll('.char');
 
         const interval = setInterval(() => {
             const progress = frame / totalFrames;
-            const revealedCount = Math.floor(progress * charMap.length);
+            const revealedCount = Math.floor(progress * chars.length);
 
             allChars.forEach((span, i) => {
                 if (i < revealedCount) {
-                    span.textContent = charMap[i].char;
-                    span.classList.add('revealed');
+                    span.textContent = chars[i];
                 } else {
                     span.textContent = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
                 }
@@ -252,56 +470,66 @@ function scrambleText(element, finalText, duration = 1800) {
 
             if (frame > totalFrames) {
                 clearInterval(interval);
-                allChars.forEach((span, i) => {
-                    span.textContent = charMap[i].char;
-                    span.classList.add('revealed');
-                });
+                element.textContent = finalText;
                 resolve();
             }
         }, frameDelay);
     });
 }
 
-// Run scramble on page load — sequential
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
     const title = document.querySelector('.neon-title');
-    const paragraphs = document.querySelectorAll('.intro-p');
-    const divider = document.querySelector('.divider');
+    const subtitle = document.querySelector('.hero-subtitle');
 
-    // Hide text initially
     title.textContent = '';
-    paragraphs.forEach(p => p.textContent = '');
-    divider.textContent = '';
+    subtitle.textContent = '';
 
-    // Sequential scramble animation
-    await new Promise(r => setTimeout(r, 200));
-    await scrambleText(title, translations.ru.title, 1800);
-    await scrambleText(paragraphs[0], translations.ru.p1, 1800);
-    await scrambleText(paragraphs[1], translations.ru.p2, 1800);
-    await scrambleText(paragraphs[2], translations.ru.p3, 1800);
-    await scrambleText(divider, translations.ru.contact, 1800);
+    await new Promise(r => setTimeout(r, 300));
+    await scrambleText(title, translations.ru.title, 1200);
+    await scrambleText(subtitle, translations.ru.subtitle, 800);
+
+    // Fade in sections on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        observer.observe(item);
+    });
 });
 
-// Language switcher with scramble effect — sequential
+// Language switcher
 document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', () => {
         const lang = btn.dataset.lang;
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const title = document.querySelector('.neon-title');
-        const paragraphs = document.querySelectorAll('.intro-p');
-        const divider = document.querySelector('.divider');
+        const subtitle = document.querySelector('.hero-subtitle');
 
-        // Sequential scramble
-        await scrambleText(title, translations[lang].title, 1800);
-        await scrambleText(paragraphs[0], translations[lang].p1, 1800);
-        await scrambleText(paragraphs[1], translations[lang].p2, 1800);
-        await scrambleText(paragraphs[2], translations[lang].p3, 1800);
-        await scrambleText(divider, translations[lang].contact, 1800);
+        // Scramble animation for title and subtitle
+        scrambleText(title, translations[lang].title, 800);
+        scrambleText(subtitle, translations[lang].subtitle, 500);
 
-        const langMap = { jp: 'ja', cn: 'zh' };
-        document.documentElement.lang = langMap[lang] || lang;
+        // Instant translation for all other content
+        applyTranslations(lang);
+    });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 </script>
