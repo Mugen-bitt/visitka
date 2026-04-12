@@ -479,16 +479,6 @@ function scrambleText(element, finalText, duration = 1200) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    const title = document.querySelector('.neon-title');
-    const subtitle = document.querySelector('.hero-subtitle');
-
-    title.textContent = '';
-    subtitle.textContent = '';
-
-    await new Promise(r => setTimeout(r, 300));
-    await scrambleText(title, translations.ru.title, 1200);
-    await scrambleText(subtitle, translations.ru.subtitle, 800);
-
     // Fade in sections on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
